@@ -1,0 +1,207 @@
+/*=============== HOME ===============*/
+.home {
+  &__content {
+    height: 88vh;
+    margin-top: 1.3rem;
+    justify-content: center;
+  }
+  &__data {
+    grid-row: 1;
+  }
+  &__img {
+    height: 250px;
+    justify-self: center;
+  }
+  &__indicator {
+    width: 8px;
+    height: 8px;
+    background-color: var(--title-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 7rem;
+    right: 2rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 48px;
+      background-color: var(--title-color);
+      top: -3rem;
+      right: 45%;
+    }
+  }
+
+  &__subtitle {
+    font-size: var(--h2-font-size);
+    margin-bottom: var(--mb-1);
+  }
+  &__title {
+    font-size: var(--biggest-font-size);
+    font-weight: var(--font-semi-bold);
+    line-height: 109%;
+    margin-bottom: var(--mb-1);
+  }
+  &__description {
+    font-size: var(--h3-font-size);
+    // font-weight: var(--font-semi-bold);
+    margin-bottom: var(--mb-1);
+  }
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.hexagone-container {
+  transform: scale(0.7, 0.7);
+  position: relative;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+}
+
+.animate:hover {
+  animation-play-state: paused;
+}
+
+.hexagone {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.side-faces {
+  transform-style: preserve-3d;
+}
+
+.top,
+.bottom {
+  position: absolute;
+  line-height: 100px;
+  text-align: center;
+}
+
+.face {
+  position: absolute;
+  width: 175px;
+  height: 100px;
+}
+
+.face:nth-child(2) {
+  transform: rotate(60deg);
+}
+
+.face:nth-child(3) {
+  transform: rotate(120deg);
+}
+
+.side {
+  width: 175px;
+  height: 100px;
+  position: absolute;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.842) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  text-align: center;
+  line-height: 100px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1) inset;
+}
+
+.top {
+  transform: translateZ(100px);
+}
+
+.bottom {
+  transform: rotateZ(60deg) rotateX(180deg) translateZ(100px);
+}
+
+.side:nth-child(1) {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+
+.side:nth-child(2) {
+  transform: rotateY(-90deg) rotateX(60deg) translateZ(100px);
+}
+
+.side:nth-child(3) {
+  transform: rotateZ(180deg) rotateY(-90deg) rotateX(-60deg) translateZ(100px);
+}
+
+.side:nth-child(4) {
+  transform: rotateZ(180deg) rotateY(-90deg) translateZ(100px);
+}
+
+.side:nth-child(5) {
+  transform: rotateZ(180deg) rotateY(-90deg) rotateX(60deg) translateZ(100px);
+}
+
+.side:nth-child(6) {
+  transform: rotateY(-90deg) rotateX(-60deg) translateZ(100px);
+}
+
+@-webkit-keyframes spinningH {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes spinningH {
+  /* from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(90deg) rotateY(90deg);
+  } */
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.animate {
+  -webkit-animation: spinningH 12s infinite linear;
+  -moz-animation: spinningH 12s infinite linear;
+  -o-animation: spinningH 12s infinite linear;
+  -ms-animation: spinningH 12s infinite linear;
+  animation: spinningH 12s infinite linear;
+}
+
+#typedtext {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid white; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  animation: typing 4.5s steps(30, end), blink-caret 0.5s step-end 9;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+  transition: all 0.3s ease-out;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+  100% {
+    border-color: transparent;
+  }
+}

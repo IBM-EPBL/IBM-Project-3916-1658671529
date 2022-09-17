@@ -1,0 +1,45 @@
+/*--------------------------------------------------------------
+# Resume
+--------------------------------------------------------------*/
+.resume {
+  display: flex;
+  flex-wrap: wrap;
+  &-title {
+    font-size: 26px;
+    font-weight: var(--font-semi-bold);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  &__skill {
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 7px 15px;
+    display: block;
+    text-align: center;
+    font-size: var(--smaller-font-size);
+    margin-bottom: var(--mb-1);
+
+    span {
+      word-spacing: 0.6rem;
+    }
+  }
+  &-item {
+    margin-top: -2px;
+    position: relative;
+    h4 {
+      line-height: 18px;
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: var(--first-color);
+      margin-bottom: 10px;
+    }
+
+    ul {
+      li {
+        padding-bottom: 10px;
+      }
+    }
+  }
+}
