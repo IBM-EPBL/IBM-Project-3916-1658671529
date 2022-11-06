@@ -1,0 +1,22 @@
+{% extends "home.html" %}
+{% block title %}Content - {% endblock %}
+{% block head %}
+  {{ super() }}
+  <style type="text/css">
+    .important { color: #336699; }
+  </style>
+{% endblock %}
+{% block content %}
+  <h1>Index</h1>
+  <p class="important">
+    Welcome
+
+<table>
+{% for key,value in result.items() %}
+<tr>
+  <th>{{key}}</th>
+  <td>{{value}}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
