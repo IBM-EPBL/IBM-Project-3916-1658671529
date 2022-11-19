@@ -18,6 +18,7 @@ conn=ibm_db.connect("")
 
 
 
+
 @app.route('/plot.png')
 def plot_png():
     fig = create_figure()
